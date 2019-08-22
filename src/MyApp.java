@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -205,7 +206,7 @@ public class MyApp extends MessageCracker implements Application
       // set the account to retrieve the positions from 
       request.set(account.getAccount());
       // set the time for the transaction to now for the current data
-      request.set(LocalDataTime.new());
+      request.set (new TransactTime(LocalDateTime.now()));
       // set the date for the position reports to the current date for fresh data 
       request.set(new ClearingBusinessDate(getDate()));
       // set the type of account, by default FXCM has ACCOUNT_IS_CARRIED_ON_NON_CUSTOMER_SIDE_OF_BOOKS_AND_IS_CROSS_MARGINED
